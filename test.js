@@ -23,7 +23,8 @@ function predict(imgData) {
         const pred = model.predict(preprocess(imgData)).dataSync()
                     
         //retreive the highest probability class label 
-        const idx = pred.argMax();
+        //const idx = pred.argMax();
+
                 
         //find the predictions 
         const indices = findIndicesOfMax(pred, 1)
