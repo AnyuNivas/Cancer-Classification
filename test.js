@@ -1,3 +1,5 @@
+var classNames = [];
+var model;
 /*
 get the the class names 
 */
