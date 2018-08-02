@@ -1,4 +1,15 @@
 /*
+find predictions
+*/
+function findTopValues(inp, count) {
+    var outp = [];
+    let indices = findIndicesOfMax(inp, count)
+    // show  scores
+    for (var i = 0; i < indices.length; i++)
+        outp[i] = inp[indices[i]]
+    return outp
+}
+/*
 get indices of the top probs
 */
 function findIndicesOfMax(inp, count) {
