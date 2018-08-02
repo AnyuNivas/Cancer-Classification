@@ -1,4 +1,13 @@
 /*
+get the the class names 
+*/
+function getClassNames(indices) {
+    var outp = []
+    for (var i = 0; i < indices.length; i++)
+        outp[i] = classNames[indices[i]]
+    return outp
+}
+/*
 find predictions
 */
 function findTopValues(inp, count) {
