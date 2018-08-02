@@ -88,12 +88,12 @@ function predict(imgData) {
 
                 
         //find the predictions 
-        const indices = findIndicesOfMax(pred, 1)
-        const probs = findTopValues(pred, 1)
+        const indices = findIndicesOfMax(pred, 0)
+        const probs = findTopValues(pred, 0)
         const names = getClassNames(indices) 
         //set the table 
         //setTable(names, probs) 
-        document.getElementById("Result").innerHTML = pred
+        document.getElementById("Result").innerHTML = names
         document.getElementById("Probability").innerHTML = probs
     
   }
