@@ -17,7 +17,7 @@ function preprocess(img)
 get the prediction 
 */
 function predict(imgData) {
-        tf.tidy(() => {
+        
       
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
@@ -33,22 +33,12 @@ function predict(imgData) {
         //setTable(names, probs) 
         document.getElementById("Result").innerHTML = names
         document.getElementById("Probability").innerHTML = probs
-    });
+    
   }
 
 async function start(){
-	img = document.getElementById('image').files[0];
-	var reader = new FileReader();
-
-        var imgtag = document.getElementById("myimage");
-        imgtag.title = img.name;
-
-        reader.onload = function(event) {
-         imgtag.src = event.target.result;
-         };
-
-         reader.readAsDataURL(img);
-       
+	//img = document.getElementById('image').files[0];
+	
         
         model = await tf.loadModel('model/model.json')
         
@@ -58,7 +48,7 @@ async function start(){
         
         //document.getElementById('status').innerHTML = 'Model Loaded';
 
-        
+        img = document.getElementById('list');
         predict(img)
     
         //load the class names
