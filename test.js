@@ -38,7 +38,16 @@ function predict(imgData) {
 
 async function start(){
 	img = document.getElementById('image').files[0];
-	
+	var reader = new FileReader();
+
+        var imgtag = document.getElementById("myimage");
+        imgtag.title = img.name;
+
+        reader.onload = function(event) {
+         imgtag.src = event.target.result;
+         };
+
+         reader.readAsDataURL(img);
        
         
         model = await tf.loadModel('model/model.json')
