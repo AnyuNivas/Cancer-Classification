@@ -5,13 +5,13 @@ get the prediction
 function predict(imgData) {
         tf.tidy(() => {
       
-                //get the prediction 
-                const pred = model.predict(preprocess(imgData)).dataSync()
+        //get the prediction 
+        const pred = model.predict(preprocess(imgData)).dataSync()
                     
-                //retreive the highest probability class label 
-                const idx = pred.argMax();
+        //retreive the highest probability class label 
+        const idx = pred.argMax();
                 
-                //find the predictions 
+        //find the predictions 
         const indices = findIndicesOfMax(pred, 1)
         const probs = findTopValues(pred, 1)
         const names = getClassNames(indices) 
@@ -21,7 +21,7 @@ function predict(imgData) {
         document.getElementById("Probability").innerHTML = probs
     });
   }
-  
+
 async function start(){
 	img = document.getElementById('image').files[0];
 	
