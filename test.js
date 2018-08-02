@@ -1,6 +1,29 @@
 var classNames = [];
 var model;
 /*
+load the class names 
+*/
+async function loadDict() {
+  
+    loc = 'model/class_names.txt'
+    
+    await $.ajax({
+        url: loc,
+        dataType: 'text',
+    }).done(success);
+}
+
+/*
+load the class names
+*/
+function success(data) {
+    const lst = data.split(/\n/)
+    for (var i = 0; i < lst.length - 1; i++) {
+        let symbol = lst[i]
+        classNames[i] = symbol
+    }
+}
+/*
 get the the class names 
 */
 function getClassNames(indices) {
