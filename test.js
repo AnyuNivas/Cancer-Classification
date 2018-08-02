@@ -93,7 +93,7 @@ function predict(imgData) {
         const names = getClassNames(indices) 
         //set the table 
         //setTable(names, probs) 
-        document.getElementById("Result").innerHTML = names
+        document.getElementById("Result").innerHTML = pred
         document.getElementById("Probability").innerHTML = probs
     
   }
