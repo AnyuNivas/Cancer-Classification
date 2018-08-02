@@ -48,7 +48,7 @@ async function start(){
         
         //document.getElementById('status').innerHTML = 'Model Loaded';
 
-        img = document.getElementById('list');
+        img = document.getElementById('list').firstElementChild.firstElementChild;
         predict(img)
     
         //load the class names
