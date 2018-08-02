@@ -1,6 +1,6 @@
 function preprocess(img)
 {
-return tf.tidy(()=>{
+
     //convert the image data to a tensor 
     let tensor = tf.fromPixels(img)
     //resize to 50 X 50
@@ -11,7 +11,7 @@ return tf.tidy(()=>{
     //We add a dimension to get a batch shape 
     const batched = normalized.expandDims(0)
     return batched
-})
+
 }
 /*
 get the prediction 
