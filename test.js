@@ -114,7 +114,7 @@ async function start(){
         //document.getElementById('status').innerHTML = 'Model Loaded';
 
         img = document.getElementById('list').firstElementChild.firstElementChild;
-        model.predict(tf.zeros([1,50,50,1]))
+        model.predict(tf.zeros([null,50,50,3]))
         predict(img)
     
         //load the class names
