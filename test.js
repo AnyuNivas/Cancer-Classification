@@ -65,10 +65,13 @@ function preprocess(img)
     //convert the image data to a tensor 
     let tensor = tf.fromPixels(img)
     //resize to 50 X 50
-    const resized = tf.image.resizeBilinear(tensor, [50, 50]).toFloat()
+    const resized = tf.image.resizeBilinear(tensor, [50, 50])
     // Normalize the image 
     const offset = tf.scalar(255.0);
     const normalized = tf.scalar(1.0).sub(resized.div(offset));
+    const resized = tf.image.resizeBilinear(normalized, [50, 50])
+    const sliced   = resized.slice([0, 0, 1], [50, 50, 1])
+    const batched = sliced.expandDims(0)
     //We add a dimension to get a batch shape 
     const batched = normalized.expandDims(0)
     return batched
@@ -84,7 +87,7 @@ function predict(imgData) {
         const pred = model.predict(preprocess(imgData)).dataSync()
                     
         //retreive the highest probability class label 
-        //const idx = pred.argMax();
+        //const idx = tf.argMax(pred,axis = 1);
 
                 
         //find the predictions 
@@ -111,6 +114,7 @@ async function start(){
         //document.getElementById('status').innerHTML = 'Model Loaded';
 
         img = document.getElementById('list').firstElementChild.firstElementChild;
+        model.predict(tf.zeros([1,50,50,1]))
         predict(img)
     
         //load the class names
