@@ -87,7 +87,7 @@ function predict(imgData) {
         const pred = model.predict(preprocess(imgData)).dataSync()
                     
         //retreive the highest probability class label 
-        //const idx = tf.argMax(pred,axis = 1);
+        const idx = tf.argMax(pred,axis = 1);
 
                 
         //find the predictions 
@@ -96,7 +96,7 @@ function predict(imgData) {
         const names = getClassNames(indices) 
         //set the table 
         //setTable(names, probs) 
-        document.getElementById("Result").innerHTML = names
+        document.getElementById("Result").innerHTML = idx
         document.getElementById("Probability").innerHTML = probs
     
   }
