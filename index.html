@@ -20,23 +20,17 @@
 </div>
 <div class="col" style ='margin-left:100px;'>
 <h4 id ='status' >Loading Model... </h4>
-
- 
-<!-- </form> -->
-<p id = "Result"></p>
-<p id = "Probability"></p>
 </div>
 <img id="myimage" height="200">
-
-<!--<form onsubmit="start(this);"> -->
-  <!--File: <input type="file" name="my_file" id = "image"/><br /> -->
-  
-<!-- </form> -->
 
 </div>
 <input type="file" id="files" name="files[]" multiple />
 <output id="list"></output>
 <button type="button" value="Submit" onclick = "start()">submit</button>
+<div>
+<p id = "Result"></p>
+<p id = "Probability"></p>
+</div>
 <script>
  function handleFileSelect(evt) {
    var files = evt.target.files; // FileList object
