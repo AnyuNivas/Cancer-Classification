@@ -87,7 +87,7 @@ function predict(imgData) {
         const pred = model.predict(preprocess(imgData)).dataSync()
                     
         //retreive the highest probability class label 
-        const idx = tf.argMax(pred,axis = 1);
+        const idx = tf.argMax(pred);
 
                 
         //find the predictions 
