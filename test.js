@@ -69,7 +69,7 @@ function preprocess(img)
     // Normalize the image 
     const offset = tf.scalar(255.0);
     const normalized = tf.scalar(1.0).sub(resized.div(offset));
-    const resized = tf.image.resizeBilinear(normalized, [50, 50])
+    //const resized = tf.image.resizeBilinear(normalized, [50, 50])
     const sliced   = resized.slice([0,0,3], [50, 50, 3])
     const batched = sliced.expandDims(0)
     //We add a dimension to get a batch shape 
