@@ -5,7 +5,7 @@ load the class names
 */
 async function loadDict() {
   
-    loc = 'model/class_names.txt'
+    loc = 'model2/class_names.txt'
     
     await $.ajax({
         url: loc,
@@ -62,18 +62,13 @@ function findIndicesOfMax(inp, count) {
 function preprocess(img)
 {
 
-    //convert the image data to a tensor 
-    let tensor = tf.fromPixels(img).toFloat()
-    //resize to 50 X 50
-    const resized = tf.image.resizeBilinear(tensor, [50, 50])
-    // Normalize the image 
+    const tensor = tf.fromPixels(imgData).toFloat()
     const offset = tf.scalar(255.0);
-    const normalized = tf.scalar(1.0).sub(resized.div(offset));
-    //const resized = tf.image.resizeBilinear(normalized, [50, 50])
-    //const sliced   = resized.slice([0,0,3], [50, 50, 3])
-    //const batched = sliced.expandDims(0)
-    //We add a dimension to get a batch shape 
-    const batched = normalized.expandDims(0)
+    // Normalize the image 
+    const normalized = tf.scalar(1.0).sub(tensor.div(offset));
+    const resized = tf.image.resizeBilinear(normalized, [50, 50])
+    const sliced   = resized.slice([0, 0, 3], [50, 50, 3])
+    const batched = sliced.expandDims(0)
     return batched
 
 }
@@ -96,7 +91,7 @@ function predict(imgData) {
         const names = getClassNames(indices) 
         //set the table 
         //setTable(names, probs) 
-        document.getElementById("Result").innerHTML = idx
+        document.getElementById("Result").innerHTML = names
         document.getElementById("Probability").innerHTML = probs
     
   }
@@ -105,7 +100,7 @@ async function start(){
 	//img = document.getElementById('image').files[0];
 	
         
-        model = await tf.loadModel('model/model.json')
+        model = await tf.loadModel('model2/model.json')
         
         var status = document.getElementById('status')
       
