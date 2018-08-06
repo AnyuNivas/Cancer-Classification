@@ -79,7 +79,7 @@ get the prediction
 */
 function predict(imgData) {
         
-      
+        var class_names = ['IDC_0','IDC_1']
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
                     
@@ -90,7 +90,8 @@ function predict(imgData) {
         //find the predictions 
         const indices = findIndicesOfMax(pred, 1)
         const probs = findTopValues(pred, 1)
-        const names = getClassNames(indices) 
+        const names = class_names[indices] 
+
         //set the table 
         //setTable(names, probs) 
         document.getElementById("Result").innerHTML = names
