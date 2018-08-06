@@ -62,7 +62,7 @@ function findIndicesOfMax(inp, count) {
 function preprocess(img)
 {
 
-    const tensor = tf.fromPixels(imgData).toFloat()
+    const tensor = tf.fromPixels(imgData)
     const offset = tf.scalar(255.0);
     // Normalize the image 
     const normalized = tf.scalar(1.0).sub(tensor.div(offset));
