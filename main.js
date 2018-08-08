@@ -4,6 +4,7 @@ variables
 */
 var model;
 var img;
+var classNames = [];
 var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".png"];    
 function Validate(oForm) {
     img = oForm.getElementsByTagName("input");
@@ -156,7 +157,7 @@ load the model
 
 async function start(img) {
     
-    #if(Validate(img))
+    Validate(img)
     //load the model 
     model = await tf.loadModel('model/model.json')
         

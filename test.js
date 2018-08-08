@@ -79,7 +79,7 @@ get the prediction
 */
 function predict(imgData) {
         
-        var class_names = ['IDC_0','IDC_1']
+        var class_names = ['NO_IDC','Contains_IDC']
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
                     
@@ -113,6 +113,7 @@ async function start(){
 
         img = document.getElementById('list').firstElementChild.firstElementChild;
         //model.predict(tf.zeros([null,50,50,3]))
+        Validate(img)
         predict(img)
     
         //load the class names
