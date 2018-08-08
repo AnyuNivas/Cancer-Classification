@@ -137,15 +137,13 @@ async function start(){
         status.innerHTML = 'Model Loaded'
         
         //document.getElementById('status').innerHTML = 'Model Loaded';
-        try{
+      
 
-           img = document.getElementById('list').firstElementChild.firstElementChild;
-           //model.predict(tf.zeros([null,50,50,3]))
-           //Validate(img)
-           predict(img)
-        catch(err){
-           console.log("please select valid image file")
-        }   
+        img = document.getElementById('list').firstElementChild.firstElementChild;
+        //model.predict(tf.zeros([null,50,50,3]))
+        //Validate(img)
+        predict(img)
+          
     
         //load the class names
         await loadDict()
