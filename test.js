@@ -130,7 +130,7 @@ async function start(){
 	//img = document.getElementById('image').files[0];
 	
         
-        model = await tf.loadModel('model/model.json')
+        model = await tf.loadModel('model2/model.json')
         
         var status = document.getElementById('status')
       
