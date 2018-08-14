@@ -116,6 +116,7 @@ function predict(imgData) {
                 
         //find the predictions 
         const indices = findIndicesOfMax(pred, 1)
+        console.log(indices)
         const probs = findTopValues(pred, 1)
         const names = getClassNames(indices) 
 
