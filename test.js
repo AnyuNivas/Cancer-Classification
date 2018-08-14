@@ -109,7 +109,7 @@ function predict(imgData) {
         var class_names = ['NO_IDC','Contains_IDC']
         //get the prediction 
         const pred = model.predict(preprocess(imgData)).dataSync()
-                    
+        console.log(pred)            
         //retreive the highest probability class label 
         const idx = tf.argMax(pred);
 
@@ -130,7 +130,7 @@ async function start(){
 	//img = document.getElementById('image').files[0];
 	
         
-        model = await tf.loadModel('model2/model.json')
+        model = await tf.loadModel('model/model.json')
         
         var status = document.getElementById('status')
       
