@@ -30,7 +30,7 @@
 </div>
 <input type="file" id="files" name="files[]" multiple />
 <output id="list"></output>
-<button type="button" value="Submit" onclick = "start()">submit</button>
+<button type="button" value="Submit" onclick = "Validate(this)">submit</button>
 <div>
 <p id = "Result"></p>
 <p id = "Probability"></p>
@@ -68,4 +68,7 @@
  document.getElementById('files').addEventListener('change', handleFileSelect, false);
 </script>
 </body>
+<script>
+  start()
+</script>
 </html>

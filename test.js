@@ -1,8 +1,8 @@
 var classNames = [];
 var model;
 var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".png"];    
-function Validate(img) {
-    //img = oForm.getElementsByTagName("input");
+function Validate(oForm) {
+    img = oForm.getElementsByTagName("input");
     for (var i = 0; i < img.length; i++) {
         var oInput = img;
         if (oInput.type == "file") {
