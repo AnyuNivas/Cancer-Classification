@@ -122,7 +122,7 @@ function predict(imgData) {
         //set the table 
         //setTable(names, probs) 
         document.getElementById("Result").innerHTML = names
-        document.getElementById("Probability").innerHTML = probs*100
+        document.getElementById("Probability").innerHTML = probs
     
   }
 
