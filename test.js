@@ -7,7 +7,7 @@ load the class names
 async function loadDict() {
   
     loc = 'model2/class_names.txt'
-    
+    console.log(loc)
     await $.ajax({
         url: loc,
         dataType: 'text',
@@ -22,6 +22,7 @@ function success(data) {
     for (var i = 0; i < lst.length - 1; i++) {
         let symbol = lst[i]
         classNames[i] = symbol
+    console.log(classnames)	    
     }
 }
 /*
@@ -119,12 +120,11 @@ async function start(){
 
         img = document.getElementById('list').firstElementChild.firstElementChild;
         //model.predict(tf.zeros([null,50,50,3]))
-        //Validate(img)
-        predict(img)
-          
-    
-        //load the class names
+        
+	//load the class names
         await loadDict()
+        predict(img)
+         
         }
    
 
