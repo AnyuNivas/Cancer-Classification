@@ -41,16 +41,6 @@
         }
     });    
 });
-</script>     
-<input type="file" id="files" name="files[]" accept=".jpg, .jpeg, .png"/>
-<output id="list"></output>
-<button type="button" value="Submit" onclick = "start()">submit</button>
-<div>
-<p id = "Result"></p>
-<p id = "Probability"></p>
-</div>
-    
-<script> 
  function clearFileInput(id) 
 { 
     var oldInput = document.getElementById(id); 
@@ -65,9 +55,21 @@
     // TODO: copy any other relevant attributes 
 
     oldInput.parentNode.replaceChild(newInput, oldInput); 
-}
-
-clearFileInput("files");   
+}    
+</script>     
+<input type="file" id="files" name="files[]" accept=".jpg, .jpeg, .png"/>
+<output id="list"></output>
+<button type="button" value="Submit" onclick = "start()">submit</button>
+<div>
+<p id = "Result"></p>
+<p id = "Probability"></p>
+</div>
+<script>
+clearFileInput("files");
+</script>    
+    
+<script> 
+  
  function handleFileSelect(evt) {
    var files = evt.target.files; // FileList object
 
