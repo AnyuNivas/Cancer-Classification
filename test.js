@@ -22,7 +22,7 @@ function success(data) {
     for (var i = 0; i < lst.length - 1; i++) {
         let symbol = lst[i]
         classNames[i] = symbol
-    console.log(classnames)	    
+    console.log(classNames)	    
     }
 }
 /*
