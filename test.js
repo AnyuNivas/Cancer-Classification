@@ -84,7 +84,7 @@ function predict(imgData) {
         
         var class_names = ['NO_IDC','Contains_IDC']
         //get the prediction 
-        const pred = model.predict(preprocess(imgData)).dataSync()
+        var pred = model.predict(preprocess(imgData)).dataSync()
         console.log(pred)            
         //retreive the highest probability class label 
         const idx = tf.argMax(pred);
