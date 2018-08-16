@@ -46,10 +46,13 @@
 <output id="list"></output>
 <button type="button" value="Submit" onclick = "start()">submit</button>
 <div>
-<p id = "Result"></p>
-<p id = "Probability"></p>
+<p id = "Result">Result =</p>
+<p id = "Probability">Probability =</p>
 </div>
-<script>
+<div>
+    <p><b>Note:</b> Only one Image can be uploaded at one time</p>
+</div>    
+<script>   
  function handleFileSelect(evt) {
    var files = evt.target.files; // FileList object
 
