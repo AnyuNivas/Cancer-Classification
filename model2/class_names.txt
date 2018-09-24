@@ -1,2 +1,2 @@
-IDC_0
-IDC_1
+No_IDC
+Contains_IDC
