@@ -99,7 +99,7 @@ function predict(imgData) {
         //set the table 
         //setTable(names, probs) 
         document.getElementById("Result").innerHTML = names
-        document.getElementById("Probability").innerHTML = probs
+        //document.getElementById("Probability").innerHTML = probs
 	console.log(names);
         console.log(document.getElementById("Result"));
     
